@@ -34,11 +34,11 @@ function submitEditUser() {
     let username = $("#username-new").val();
     let password = $("#password-new").val();
     if (username == null || username === undefined || username === ''){
-        alert('请输入新用户名');
+        alert('Please enter a new user name');
         return
     }
     if (password == null || password === undefined || password === ''){
-        alert('请输入新密码');
+        alert('Please enter a new password');
         return
     }
     var old_username = $.base64.encode($.base64.encode(salt) + splitWord + $.base64.encode(getCookie().username));
@@ -52,10 +52,10 @@ function submitEditUser() {
              $.cookie("username",new_username,{ expires: 7 });
              $.cookie("password",new_password,{ expires: 7 });
              showUserInfo();
-             alert('修改成功');
+             alert('Modified success');
              $(location).attr('href', '/');
         } else {
-            alert('修改失败')
+            alert('Modification failed')
         }
     })
 }
