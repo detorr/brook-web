@@ -61,7 +61,7 @@ The explanation of the two points.
 The language environment the project depends on
 - **curl** 
 
-install-brook.py程序用到的下载程序
+install-brook.py Download app used by the program
 
 # Start visit
 
