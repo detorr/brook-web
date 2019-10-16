@@ -103,27 +103,27 @@ function submit_addport() {
     var username = $('#username').val();
     var info = $('#info').val();
     if (info.length > 10) {
-        alert('备注字符串长度不能大于10');
+        alert('Note string length cannot be greater than 10');
         return;
     }
     if (port <= 0 || Number.isInteger(port)) {
-        alert('端口号请使用正整数');
+        alert('Please use positive integer for port number');
         return;
     } else if (port < 1024) {
-        alert('0-1023为系统保留端口');
+        alert('0-1023 Reserve ports for the system');
         return;
     }
     if (username == null || username === undefined || username == '') {
-        console.log('增加一个不使用账号的端口服务');
+        console.log('Add a port service without account');
         username = '';
     } else {
         if (psw == null || psw === undefined || psw == '') {
-            alert('密码不能为空');
+            alert('Password cannot be empty');
             return;
         }
     }
     if (type !== 2 && (psw == null || psw === undefined || psw == '')) {
-        alert('密码不能为空');
+        alert('Password cannot be empty');
         return;
     }
     $.post('api/addport', {
@@ -142,12 +142,12 @@ function submit_addport() {
             $("#radio-brook").prop('checked', true);
             $("#radio-ss").prop('checked', false);
             $("#radio-socks5").prop('checked', false);
-            console.log('添加服务成功！');
+            console.log('Add service succeeded！');
             $('#myModal').modal('hide');
         } else if (result.code == -2) {
-            alert('端口已被占用，请换一个端口');
+            alert('The port is occupied. Please change it');
         } else {
-            alert('端口开启失败')
+            alert('Port open failed')
         }
     });
 }
@@ -160,14 +160,14 @@ function submit_delport(type, port) {
         service = 'ShadowSocks';
     else if (type == 2)
         service = 'Socks5';
-    var delete_confirm = confirm('确定要删除端口：' + port + '上的' + service + '服务?');
+    var delete_confirm = confirm('Are you sure you want to delete the port：' + port + 'on this' + service + 'service?');
     if (delete_confirm) {
         $.post('api/delport', {
             'type': $.base64.encode($.base64.encode(salt) + splitWord + $.base64.encode(type)),
             'port': $.base64.encode($.base64.encode(salt) + splitWord + $.base64.encode(port))
         }, function (result) {
             if (result.code == 0) {
-                alert('成功删除端口！');
+                alert('Port removed successfully！');
                 $('#myModal2').modal('hide');
             }
         });
@@ -200,7 +200,7 @@ function submitTurnoff() {
     }, function (result) {
         if (result.code == 0) {
             $('#myModal3').modal('hide');
-            console.log('关闭服务')
+            console.log('Shut down service')
         }
     })
 }
@@ -232,23 +232,23 @@ function qrImage(service_json) {
                 $("#qr-img").attr('src', service_json.qr_img_path);
             }
         } else {
-            console.log('获取二维码失败')
+            console.log('Failed to get QR code')
         }
     });
 }
 
 clipboard = new ClipboardJS('#copy-link-btn');
 clipboard.on('success', function (e) {
-    console.log('复制成功');
+    console.log('');
     e.clearSelection();
 });
 clipboard.on('error', function (e) {
-    console.log('复制失败');
+    console.log('copy failed');
 });
 
 function copyLink(service_json) {
     clearInterval(state_interval);
-    $('#myModalLabel4').text('服务链接');
+    $('#myModalLabel4').text('Service link');
     if ($('#myModelBody4').children().length == 0)
         $('#myModelBody4').append("<p id='link-p' value='" + service_json.link + "' style='word-break:break-all;" +
             "white-space:normal;word-wrap:break-word;'>" + service_json.link + "</p>");
