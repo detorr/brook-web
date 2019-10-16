@@ -15,7 +15,7 @@
 <img src="https://raw.githubusercontent.com/Ccapton/brook-web/master/image/brook-web5.jpeg" height="350" width="400" >  
 </div>
 
-# 方式一、[Docker deploy](https://github.com/Ccapton/brook-web/wiki/Docker%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B) 
+# One way、[Docker deploy](https://github.com/Ccapton/brook-web/wiki/Docker%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B) 
 
 
 # Mode 2. Regular deployment
