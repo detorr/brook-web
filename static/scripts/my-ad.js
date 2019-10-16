@@ -10,7 +10,7 @@ function getAd(){
              $("#notice").append(result.data);
 
          }else {
-             console.warn('公告信息获取失败')
+             console.warn('Failed to get announcement information')
          }
 
      })
