@@ -1,10 +1,10 @@
 # [brook](https://github.com/txthinking/brook)-web ![](https://sonarcloud.io/api/project_badges/measure?project=Ccapton_brook-web&metric=alert_status)[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 
 
-### [brook](https://github.com/txthinking/brook)程序服务端Web后台管理服务器（Linux|MacOS），基于python、flask、flask-restful
+### [brook](https://github.com/txthinking/brook) Browser program server web background management server (linux| Mac OS), based on python, flask, and flask restful
 
-### [安全性说明WiKi](https://github.com/Ccapton/brook-web/wiki/%E5%AE%89%E5%85%A8%E6%80%A7%E8%AF%B4%E6%98%8E)
-### [点我查看项目WiKi](https://github.com/Ccapton/brook-web/wiki)
+### [Safety instructions WiKi](https://github.com/Ccapton/brook-web/wiki/%E5%AE%89%E5%85%A8%E6%80%A7%E8%AF%B4%E6%98%8E)
+### [view the project WiKi](https://github.com/Ccapton/brook-web/wiki)
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/Ccapton/brook-web/master/image/brook-web.jpeg" height="350" width="400" >        
@@ -15,66 +15,65 @@
 <img src="https://raw.githubusercontent.com/Ccapton/brook-web/master/image/brook-web5.jpeg" height="350" width="400" >  
 </div>
 
-# 方式一、[Docker部署](https://github.com/Ccapton/brook-web/wiki/Docker%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B) 
+# 方式一、[Docker deploy](https://github.com/Ccapton/brook-web/wiki/Docker%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B) 
 
 
-# 方式二、常规部署
-### 1、打开终端，以root用户登录
-### 2、使用 cd 命令 进入brook-web文件夹 
-### 3、安装所依赖的库、框架
+# Mode 2. Regular deployment
+### 1. Open the terminal and log in as root
+### 2. Use the CD command to enter the brook web folder
+### 3. Libraries and frameworks for installation
 ``` bash
 pip install -r requirements.txt
 ```
-或 python3环境下的pip3安装
+Or PIP3 installation in python3 environment
 ``` bash
 pip3 install -r requirements.txt
 ```
-### 4、下载brook主体程序到brook-web文件夹内
+### 4、download brook Main program into the brook-web folder
 ``` bash
 python install-brook.py
 ```
 
-### 5、开启brook-web服务
-前台模式
+### 5、Open the brook Web Service
+foreground mode
 ``` bash
 python brook-web.py
 ```
-后台模式
+Background mode
 ``` bash
 nohup python brook-web.py >/dev/null 2>log &
 ```
 
-**默认端口5000**
-若要修改服务端口，参考：
+**Default port 5000**
+To modify the service port, refer to:
 ``` bash
 python brook-web.py --port=8080
 ```
-或
+or
 ``` bash
 python brook-web.py 8080
 ```
 
-### 说明
-**请确保你的服务器（Linux|MacOS）已安装 python、curl**
-- **python** 
+The explanation of the two points.
+**Please make sure that your server (linux|macos) has Python and curl installed**
+- **python**
 
-本项目依赖的语言环境
+The language environment the project depends on
 - **curl** 
 
 install-brook.py程序用到的下载程序
 
-# 开始访问
+# Start visit
 
-### 请访问 http://主机ip:端口号 例如：
+### Please visit http: / / host IP: port number for example:
 
 > ##  http://123.123.123.123:5000 
 
-### 初始用户信息
-#### 初始账号 admin 
+### Initial user information
+#### Initial account admin
+#### Initial password admin
 
-#### 初始密码 admin
-
-# [安全性说明](https://github.com/Ccapton/brook-web/wiki/%E5%AE%89%E5%85%A8%E6%80%A7%E8%AF%B4%E6%98%8E)
+# [Safety instructions](https://github.com/Ccapton/brook-web/wiki/%E5%AE%89%E5%85%A8%E6%80%A7%E8%AF%B4%E6%98%8E)
 # License
 ``` bash
 MIT License
