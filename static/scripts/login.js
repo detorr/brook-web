@@ -14,7 +14,7 @@ function autoLogin(auto){
             }else {
                 fillUserInfo(getCookie().username,getCookie().password);
                 if(!auto){
-                    alert("登录失败，请检查用户名和密码");
+                    alert("Login failed, please check user name and password");
                 }
             }
         })
