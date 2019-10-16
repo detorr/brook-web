@@ -16,12 +16,12 @@ function setCookie() { //设置cookie
 function login() {
     var userName = $('#login-name').val();
     if (userName === undefined || userName === null || userName === "") {
-        alert("请输入用户名");
+        alert("enter one user name");
         return;
     }
     var userPass = $('#login-pass').val();
     if (userPass === undefined || userPass === null || userPass === "") {
-        alert("请输入密码");
+        alert("Please enter a password");
         return;
     }
     setCookie();
@@ -41,7 +41,7 @@ function fillUserInfo(username, psw) {
 
 function logout() {
 
-    if (confirm('确定要退出该账号？')) {
+    if (confirm('Confirm to exit the account？')) {
         $.cookie('username', '', {expires: -1});
         $.cookie('password', '', {expires: -1});
         $(location).attr('href', 'login');
