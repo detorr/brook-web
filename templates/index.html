@@ -50,11 +50,11 @@
 		    <div class="modal-content">
 			    <div class="modal-header">
 				    <h4 class="modal-title" id="myModalLabel">
-				    	增加一个端口
+                        add a port
 				    </h4>
 			    </div>
 			    <div class="modal-body">
-                    <h6>服务类型</h6>
+                    <h6> Service type </h6>
                     <div id="service-type">
                         <label class="radio" id="brook">
                             <input type="radio" name="optionsRadios" id="radio-brook" value="0" data-toggle="radio" checked="checked"  class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
@@ -69,21 +69,22 @@
                             Socks5
                         </label>
                     </div>
-                    <h6>端口信息</h6>
+                    <h6>port information</h6>
                     <div id="port-info">
-                        <input type="number" placeholder="端口" class="form-control" id="port">
-                        <input type="text" placeholder="用户名" class="form-control" id="username" style="display: none">
-                        <input type="text" placeholder="密码" class="form-control" id="psw">
-                        <input type="text" placeholder="备注" class="form-control" id="info">
+                        <input class="form-control" id="port" placeholder="port" type="number">
+                        <input class="form-control" id="username" placeholder="Username" style="display: none"
+                               type="text">
+                        <input class="form-control" id="psw" placeholder="Password" type="text">
+                        <input class="form-control" id="info" placeholder="Remarks" type="text">
                     </div>
 
 			    </div>
 			    <div class="modal-footer">
 				    <button type="button" class="btn btn-default" data-dismiss="modal">
-				    	取消
+                        cancel
 				    </button>
 				    <button type="button" class="btn btn-primary" onclick="submit_addport()">
-				    	提交
+                        Submit
 				    </button>
 			    </div>
 		    </div><!-- /.modal-content -->
@@ -96,7 +97,7 @@
 		    <div class="modal-content">
 			    <div class="modal-header">
 				    <h4 class="modal-title" id="myModalLabel2">
-				    	删除一个端口
+                        Delete a port
 				    </h4>
 			    </div>
 			    <div class="modal-body">
@@ -115,7 +116,7 @@
                             Socks5
                         </label>
                     </div>
-                    <h6>选择端口</h6>
+                    <h6>Select port</h6>
                     <div id="port-info-del">
 
                     </div>
@@ -123,10 +124,10 @@
 			    </div>
 			    <div class="modal-footer">
 				    <button type="button" class="btn btn-default" data-dismiss="modal">
-				    	取消
+                        cancel
 				    </button>
 {#				    <button type="button" class="btn btn-primary" onclick="submit_delport()">#}
-{#				    	提交#}
+                    {# Submit#}
 {#				    </button>#}
 			    </div>
 		    </div><!-- /.modal-content -->
@@ -138,11 +139,11 @@
 		    <div class="modal-content">
 			    <div class="modal-header">
 				    <h4 class="modal-title" id="myModalLabel3">
-				    	关闭服务
+                        Shut down service
 				    </h4>
 			    </div>
 			    <div class="modal-body">
-                    <h6>选择要关闭的服务</h6>
+                    <h6>Select services to shut down</h6>
                     <div id="service-type-2">
                         <label class="radio" id="brook-2">
                             <input type="radio" name="optionsRadios3" id="radio-brook-2" value="0" data-toggle="radio" checked="checked"  class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
@@ -158,17 +159,17 @@
                         </label>
                         <label class="radio" id="service-all">
                             <input type="radio" name="optionsRadios3" id="service-radio-all" value="-1" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                            全部
+                            whole
                         </label>
                     </div>
 
 			    </div>
 			    <div class="modal-footer">
 				    <button type="button" class="btn btn-default" data-dismiss="modal">
-				    	取消
+                        cancel
 				    </button>
 				    <button type="button" class="btn btn-primary" onclick="submitTurnoff()">
-				    	提交
+                        Sumbit
 				    </button>
 			    </div>
 		    </div><!-- /.modal-content -->
@@ -187,7 +188,7 @@
 			    </div>
 			    <div class="modal-footer">
                     <button id="copy-link-btn" type="button" data-clipboard-target="#link-p" class="btn btn-primary" data-dismiss="modal">
-				    	复制
+                        copy
 				    </button>
 			    </div>
 		    </div><!-- /.modal-content -->
@@ -205,7 +206,7 @@
 			    </div>
 			    <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">
-				    	关闭
+                        Close
 				    </button>
 			    </div>
 		    </div><!-- /.modal-content -->
