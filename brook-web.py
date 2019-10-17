@@ -10,17 +10,20 @@
 # 。 @Github  : https://github.com/ccapton
 # 。 @Email   : chenweibin1125@foxmail.com
 # 。__________________________________________
-from __future__ import print_function  # 同时兼容python2、Python3
 from __future__ import division  # 同时兼容python2、Python3
+from __future__ import print_function  # 同时兼容python2、Python3
+
+import json
+import os
+import re
 
 from flask import Flask, render_template, send_from_directory, request
 from flask_apscheduler import APScheduler
 from flask_restful import Api
 from flask_restful import Resource, reqparse
-import json, os, re, sys
-from qr import *
-from iptables import release_port, refuse_port
 
+from iptables import release_port, refuse_port
+from qr import *
 
 # 判断当前Python执行大版本
 python_version = sys.version
@@ -394,13 +397,13 @@ class ServiceState(BaseResource):
         if check_base64_data(is_get_service_state=False):
             return base_result(msg='', code=0, data=base64encode(json.dumps(self.service_state()), python_version))
         else:
-            return base_result(msg='解密失败', code=1)
+            return base_result(msg='Decryption failed', code=1)
 
     def post(self):
         if check_base64_data(is_get_service_state=True):
             return base_result(msg='', code=0, data=base64encode(json.dumps(self.service_state()), python_version))
         else:
-            return base_result(msg='解密失败', code=1)
+            return base_result(msg='Decryption failed', code=1)
 
 
 # 增加端口api
@@ -677,7 +680,7 @@ def start_service(service_type, port=-1, force=False):
         if server['state'] != 0:
             server_list_str += server_str
     if has_service_start(service_type):
-        print(' %s服务已经开启，不要重复操作' % service_name)
+        print(' %s The service has been opened, do not repeat the operation' % service_name)
         global busy
         busy = True
         save_config_json(config_json)
@@ -860,21 +863,21 @@ api.add_resource(GenerateQrImg, '/api/generateqrimg')
 
 @app.route("/")
 def brook_web():
-    title = 'Brook后台管理'
+    title = 'Brook Backend Manager'
     return render_template('index.html', title=title)
 
 
 
 @app.route("/login")
 def user_login():
-    title = 'Brook管理登录'
+    title = 'Brook Management login'
     return render_template('login.html', title=title)
 
 
 
 @app.route("/user")
 def user_edit():
-    title = 'Brook后台管理'
+    title = 'Brook Backend Manager'
     return render_template('user.html', title=title)
 
 
@@ -926,10 +929,10 @@ def config_param(port=5000, email='', domain=''):
             default_port = port
         else:
             port_error = True
-            print('端口必须大于0')
+            print('Port must be greater than 0')
     else:
         port_error = True
-        print('端口号必须为正整数')
+        print('Port number must be a positive integer')
     if email == '':
         return
     if domain == '':
@@ -981,7 +984,8 @@ if __name__ == '__main__':
         if has_service_start(SERVICE_TYPE_SOCKS5): stop_service(SERVICE_TYPE_SOCKS5, port=-1)
 
         if not os.path.exists('brook'):
-            print('当前目录下不存在brook程序！请执行 python install-brook.py 后重试')
+            print(
+                'There is no brook program in the current directory! Please execute Python install-brook.py and try again')
         else:
             start_service(SERVICE_TYPE_BROOK)
             start_service(SERVICE_TYPE_SS)
