@@ -877,7 +877,7 @@ def user_login():
 
 @app.route("/user")
 def user_edit():
-    title = 'Brook Backend Manager'
+    title = 'Brook Manager User Profile'
     return render_template('user.html', title=title)
 
 
