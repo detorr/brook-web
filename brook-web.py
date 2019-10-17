@@ -16,6 +16,7 @@ from __future__ import print_function  # 同时兼容python2、Python3
 import json
 import os
 import re
+import sys
 
 from flask import Flask, render_template, send_from_directory, request
 from flask_apscheduler import APScheduler
